@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-body text-white antialiased;
+    background: linear-gradient(135deg, #0a1f0a 0%, #1a3f1a 50%, #0f2e0f 100%);
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .animated-gradient {
+    background: linear-gradient(-45deg, #1a3f1a, #2d5f2d, #1a4d1a, #3d7a3d);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Tech Stack Floating Animations */
+  @keyframes techFloat {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .tech-float-0 {
+    animation: techFloat 4s ease-in-out infinite;
+    animation-delay: 0s;
+  }
+  
+  .tech-float-1 {
+    animation: techFloat 4.8s ease-in-out infinite;
+    animation-delay: 0.2s;
+  }
+  
+  .tech-float-2 {
+    animation: techFloat 5.6s ease-in-out infinite;
+    animation-delay: 0.4s;
+  }
+  
+  .tech-float-3 {
+    animation: techFloat 6.4s ease-in-out infinite;
+    animation-delay: 0.6s;
+  }
+  
+  .tech-float-4 {
+    animation: techFloat 7.2s ease-in-out infinite;
+    animation-delay: 0.8s;
+  }
+  
+  .tech-float-5 {
+    animation: techFloat 8s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  /* Shimmer animation for skill bars */
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  /* Modal animation */
+  @keyframes modalIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .animate-modal-in {
+    animation: modalIn 0.3s ease-out;
+  }
+
+  /* Toast animation */
+  @keyframes toastIn {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-toast-in {
+    animation: toastIn 0.3s ease-out;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(108, 99, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6C63FF, #00C9A7);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #8B5CF6, #14B8A6);
+}
+
